@@ -39,7 +39,6 @@ const checkKodelasiLable = (param)=>{
 const calculate = ()=>{
     let data_xx = data_x.value.split(',')
     let data_yy = data_y.value.split(',')
-    console.log(data_y.value.split(','));
     // clear
     total_n.value = 0
     total_y.value = 0
@@ -63,13 +62,6 @@ const calculate = ()=>{
   akar2.value = Math.sqrt((total_n.value * total_y2.value) - (total_y.value * total_y.value))
   rumus_bawah.value =   akar1.value * akar2.value
   R.value = rumus_atas.value / rumus_bawah.value
-
-    console.log(total_n.value);
-    console.log(total_y.value);
-    console.log(total_x.value);
-    console.log(total_y2.value);
-    console.log(total_x2.value);
-    console.log(total_xy.value);
     
 } 
 
@@ -132,6 +124,10 @@ const clear =()=>{
   <tr>
     <td>Sisa Percent</td>
     <td>{{ 100 - Math.floor((R * R) * 100) }}%</td>
+  </tr>
+  <tr>
+    <td>Artinya</td>
+    <td>Kemampuan variabel X dalam  menerangkan keragaman variabel Y sebesar {{ Math.floor((R * R) * 100) }}% sedangkan sisanya yaitu {{ 100 - Math.floor((R * R) * 100) }}% oleh variabel lain.</td>
   </tr>
 </table>
 <blockquote class="mt-6 text-sm italic font-semibold text-gray-900">
