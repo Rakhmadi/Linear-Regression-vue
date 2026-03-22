@@ -217,7 +217,7 @@ onMounted(()=>{
 
 <div class="m-6">
   <span>Hasil Grafik</span>
-  <div style="width: 100%;">
+  <div class="w-[100%] md:w-[60%]">
     <canvas ref="chartRef"></canvas>
   </div>
 
