@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Regresi Linear Diameter vs Tinggi Pohon</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="myChart" width="600" height="400"></canvas>
+<script>
+const x = [8, 9, 7, 6, 13, 7, 11, 12];
+const y = [35, 49, 27, 33, 60, 21, 45, 51];
+
+// Hitung garis regresi
+const slope = 10.76;
+const intercept = -58.06;
+const regressionLine = x.map(xi => slope*xi + intercept);
+
+const ctx = document.getElementById('myChart').getContext('2d');
+new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [
+            {
+                label: 'Data Pohon',
+                data: x.map((xi, i) => ({x: xi, y: y[i]})),
+                backgroundColor: 'blue'
+            },
+            {
+                label: 'Garis Regresi',
+                data: x.map((xi, i) => ({x: xi, y: regressionLine[i]})),
+                type: 'line',
+                borderColor: 'red',
+                fill: false
+            }
+        ]
+    },
+    options: {
+        scales: {
+            x: { title: { display: true, text: 'Diameter Pohon (cm)' } },
+            y: { title: { display: true, text: 'Tinggi Pohon (cm)' } }
+        }
+    }
+});
+</script>
+</body>
+</html>

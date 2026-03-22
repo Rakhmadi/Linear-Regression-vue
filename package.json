@@ -4,14 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart.js": "^4.5.1",
     "katex": "^0.13.24",
     "vatex": "^0.1.0",
-    "vue": "^3.5.12"
+    "vue": "^3.5.12",
+    "vue-chartjs": "^5.3.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
