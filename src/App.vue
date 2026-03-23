@@ -172,11 +172,11 @@ onMounted(()=>{
     <div>
   <div class="grid grid-cols-2 gap-4">
     <div>
-      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Label (Y)</label>
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Label (X)</label>
       <input type="text" v-model="lable_x" placeholder="example : Diameter Pohon" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
     </div>
     <div>
-      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Label (X)</label>
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Nama Label (Y)</label>
       <input type="text" v-model="lable_y" placeholder="example : Tinggi Pohon" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>
     </div>
     <div>
