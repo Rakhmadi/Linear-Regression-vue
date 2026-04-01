@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import {h, onMounted, reactive, ref} from 'vue'
 import { Chart } from 'chart.js/auto'
 
@@ -207,7 +206,7 @@ onMounted(()=>{
       <th>n</th>
       <th>X</th>
       <th>Y</th>
-      <th>X<sup>2</sup></th>
+      <th>sX<sup>2</sup></th>
       <th>Y<sup>2</sup></th>
       <th>XY</th>
     </tr>
@@ -218,15 +217,15 @@ onMounted(()=>{
       <td>{{ stringtoArray(data_y)[index] }}</td>
       <td>{{ stringtoArray(data_x)[index] ** 2 }}</td>
       <td>{{ stringtoArray(data_y)[index] ** 2 }}</td>
-      <td>{{ stringtoArray(data_y)[index] * stringtoArray(data_y)[index]}}</td>
+      <td>{{ stringtoArray(data_x)[index] * stringtoArray(data_y)[index]}}</td>
     </tr>
     <tr class="bg-red-200">
       <td>Total ∑ = </td>
       <td>{{ total_n }}</td>
-      <td>{{ total_y }}</td>
       <td>{{ total_x }}</td>
-      <td>{{ total_y2 }}</td>
+      <td>{{ total_y }}</td>
       <td>{{ total_x2 }}</td>
+      <td>{{ total_y2 }}</td>
       <td>{{ total_xy }}</td>
     </tr>
   </table>
