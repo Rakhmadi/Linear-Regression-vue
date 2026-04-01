@@ -1,6 +1,6 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import {onMounted, reactive, ref} from 'vue'
+import {h, onMounted, reactive, ref} from 'vue'
 import { Chart } from 'chart.js/auto'
 
 const data_x = ref('8,9,7,6,13,7,11,12')
@@ -47,6 +47,10 @@ const checkKodelasiLable = (param)=>{
     }else{
         return undefined
     }
+}
+
+const stringtoArray = (string) =>{
+  return string.split(',')
 }
 
 const calculate = ()=>{
@@ -195,6 +199,40 @@ onMounted(()=>{
     <button type="button" @click="clear" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear</button>
 
   </div>
+  <hr style="border: 0.5px solid black;">
+  <div class="flex justify-center items-center">
+    <table border="1">
+    <tr>
+      <th></th>
+      <th>n</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>X<sup>2</sup></th>
+      <th>Y<sup>2</sup></th>
+      <th>XY</th>
+    </tr>
+    <tr v-for="(item ,index) in stringtoArray(data_x) " :key="index">
+      <td></td>
+      <td>{{ index + 1 }}</td>
+      <td>{{ stringtoArray(data_x)[index] }}</td>
+      <td>{{ stringtoArray(data_y)[index] }}</td>
+      <td>{{ stringtoArray(data_x)[index] ** 2 }}</td>
+      <td>{{ stringtoArray(data_y)[index] ** 2 }}</td>
+      <td>{{ stringtoArray(data_y)[index] * stringtoArray(data_y)[index]}}</td>
+    </tr>
+    <tr class="bg-red-200">
+      <td>Total ∑ = </td>
+      <td>{{ total_n }}</td>
+      <td>{{ total_y }}</td>
+      <td>{{ total_x }}</td>
+      <td>{{ total_y2 }}</td>
+      <td>{{ total_x2 }}</td>
+      <td>{{ total_xy }}</td>
+    </tr>
+  </table>
+  </div>
+  <hr style="border: 0.5px solid black;">
+
   <vue-latex :fontsize="12" :expression="'r = \\frac{n\\sum_{}x y - (\\sum_{}x) (\\sum_{}y)  }{\\sqrt{(n\\sum_{}x^2 - (\\sum_{}x)^2)} \\sqrt{(n \\sum_{}y^2 - (\\sum_{}y)^2)}}'" display-mode />
   <vue-latex :fontsize="12" :expression="`r = \\frac{${total_n}*${total_xy} - (${total_x}) * (${total_y})   }{\\sqrt{(${total_n} * ${total_x2} - (${total_x})^2)} \\sqrt{(${total_n} * ${total_y2} - (${total_y})^2)}}`" display-mode />
   <vue-latex :fontsize="12" :expression="`r = \\frac{${rumus_atas}}{${akar1} * ${akar2}}`" display-mode />
