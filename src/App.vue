@@ -206,7 +206,7 @@ onMounted(()=>{
       <th>n</th>
       <th>X</th>
       <th>Y</th>
-      <th>sX<sup>2</sup></th>
+      <th>X<sup>2</sup></th>
       <th>Y<sup>2</sup></th>
       <th>XY</th>
     </tr>
@@ -247,8 +247,8 @@ onMounted(()=>{
   <vue-latex :fontsize="12" :expression="`Intercept (a) =  ${intercept_kiri} - ${intercept_kanan}`" display-mode />
   <vue-latex :fontsize="12" :expression="`Intercept (a) =  ${intercept}`" display-mode />
   <hr style="border: 0.5px solid black;">
-  <vue-latex :fontsize="12" :expression="`Persamaan : Y = a+bX`" display-mode />
-  <vue-latex :fontsize="12" :expression="`Persamaan : Y = ${intercept} + ${slope}X`" display-mode />
+  <vue-latex :fontsize="12" :expression="`Persamaan Regresinya : Y = a+bX`" display-mode />
+  <vue-latex :fontsize="12" :expression="`Persamaan Regresinya : Y = ${intercept} + ${slope}X`" display-mode />
   <hr style="border: 0.5px solid black;">
 
 
