@@ -168,8 +168,8 @@ onMounted(()=>{
 <template>
   <div class="m-6">
     <div class="flex flex-col">
-      <span class="text-3xl">Analisi Linear Regression</span>
-      <span class="">By Rakhmadi</span>
+      <span class="text-3xl">Analysis correlation & Linear Regression</span>
+      <span class="text-sm">By Rakhmadi</span>
     </div>
     <br>
     <div>
@@ -236,6 +236,7 @@ onMounted(()=>{
   <vue-latex :fontsize="12" :expression="`r = \\frac{${total_n}*${total_xy} - (${total_x}) * (${total_y})   }{\\sqrt{(${total_n} * ${total_x2} - (${total_x})^2)} \\sqrt{(${total_n} * ${total_y2} - (${total_y})^2)}}`" display-mode />
   <vue-latex :fontsize="12" :expression="`r = \\frac{${rumus_atas}}{${akar1} * ${akar2}}`" display-mode />
   <vue-latex :fontsize="12" :expression="`r = ${R}`" display-mode />
+  <vue-latex :fontsize="12" :expression="`r^2 = ${R * R}`" display-mode />
   <hr style="border: 0.5px solid black;">
   <vue-latex :fontsize="12" :expression="`Slope (b) = \\frac{n \\sum_{} XY - (\\sum_{} X)(\\sum_{} Y)}{n \\sum_{} X^2 - (\\sum_{} X)^2}`" display-mode />
   <vue-latex :fontsize="12" :expression="`Slope (b) = \\frac{${total_n} * ${total_xy} - (${total_x}) * (${total_y})}{${total_n} * ${total_x2} - (${total_x} * ${total_x})}`" display-mode />
@@ -268,27 +269,27 @@ onMounted(()=>{
     <td>{{ R }}</td>
   </tr>
   <tr>
-    <td>Determinasi</td>
+    <td>Korelasi Determinasi</td>
     <td>{{ R * R }}</td>
   </tr>
   <tr>
-    <td>Keterangan</td>
+    <td>Korelasi Keterangan</td>
     <td>{{ checkKodelasiLable(R) }}</td>
   </tr>
   <tr>
-    <td>Percent</td>
+    <td>Korelasi - Percent</td>
     <td>{{ Math.floor((R * R) * 100) }}%</td>
   </tr>
   <tr>
-    <td>Sisa Percent</td>
+    <td>Korelasi - Sisa Percent</td>
     <td>{{ 100 - Math.floor((R * R) * 100) }}%</td>
   </tr>
   <tr>
-    <td>Artinya (Koefisien determinasi)</td>
+    <td>Arti Korelasi</td>
     <td>Kemampuan variabel X dalam  menerangkan keragaman variabel Y sebesar {{ Math.floor((R * R) * 100) }}% sedangkan sisanya yaitu {{ 100 - Math.floor((R * R) * 100) }}% oleh variabel lain.</td>
   </tr>
   <tr>
-    <td>Artinya (Slope)</td>
+    <td>Arti Liener Regresinya</td>
     <td>{{ `Setiap kenaikan 1 ${(lable_x.trim() === "") ? "X" : lable_x} meningkatkan ${(lable_y.trim() === "") ? "Y" : lable_y} sekitar ${slope.toFixed(3)}` }}</td>
   </tr>
 </table>
